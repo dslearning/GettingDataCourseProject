@@ -1,4 +1,57 @@
-Human Activity Recognition Using Smartphones Data Set
+###Human Activity Recognition Using Smartphones Data Set
+
+##Study design
+The results of Samsung  experiment were downloaded from WEB-site by URL: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+The data were extracted from ZIP archeve into current directory.
+
+I used script "GetData.R" for downloading and extraction. 
+
+After the script finished it work, we have folder "UCI HAR Dataset" in working directory
+The structure is:
+UCI HAR Dataset
+               \train
+                     \X_train.txt			-- this file contains the results of measurements
+                     \Y_train.txt			-- this file contains the IDs of activities performed by volunteers 
+                     \subject_train.txt		-- IDs of volunteers
+               \test
+                     \X_test.txt			-- this file contains the results of measurements
+                     \Y_test.txt			-- this file contains the IDs of activities performed by volunteers 
+                     \subject_test.txt		-- IDs of volunteers
+                     \activity_labels.txt			-- List of activities
+                     \features.txt			   	-- IDs of volunteers who took part in experiments
+
+What do we do with data?
+* load test & train data set and Y-values, load list of volunteers
+* create matching between activity IDs and the names of activities (merge two data sets)
+* load reference data (list of activities)
+* select only colunms which names contain "mean" or "std" - mean value or standard deviation - from merged test & train data set
+* Create data frame which contains: 
+- ID of person who performed the experiment;
+- the name of activity
+- the results of measurement (from previous Item)
+- Create data frame which contains the averaged values from previous step (grouped by Subject and ActivityName)
+* write data frame into file
+
+##Code book
+
+* test_X - 2947 x 651 data.frame - test data set
+* test_Y - 2947 x 1 data.frame - test Y-values (IDs of activities)
+* train_X - 7352 x 561 data.frame - train data set
+* train_Y - 7352 x 1 data.frame - train Y-values (IDs of activities)
+* fullDS - 10299 x 561 data.frame - contains a combination of test & train data sets
+* full_Y - 10299 x 1 data.frame - contains a combination of test & train Y-values (IDs of activities)
+* subject_test - 2947 x 1 data.frame - testing IDs of volunteers who performed the test
+* subject_train - 7352 x 1 data.frame - training IDs of volunteers who performed the test
+* subjects_all - 10299 x 1 data.frame - combination of test and train IDs of volunteers
+* activities - list of activities
+* fts - 561 x 1 data.frame - list of features
+col_ids - 79 x 2 data.frame - IDs of columnts which contains either "mean" or "std" - mean or standart deviation measurements
+res - 10299 x 81 data.frame - full final data set
+avg_res - 180 x 81 data.frame - contains averaded values from data frame "res"
+
+
+
+### Final result set description
 
 Subject				2
 		Subject ID
