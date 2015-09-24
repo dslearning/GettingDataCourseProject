@@ -10,7 +10,7 @@ Files:
 
 ### How to get tided data 
 
-1. Run GetData.R script. This script will download archieve https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip , extract it into current directory. Therefor now we have folder "UCI HAR Dataset" in current directory created.
+1. Run GetData.R script (typing source("GetData.R") in R-console). This script will download archieve https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip , extract it into current directory. Therefor now we have folder "UCI HAR Dataset" in current directory created.
 2. Run run_analysis.R script. This script will load load two datasets (train and test) into memory, merge them, select necessaty columns and form tided data.
 
 If you have already downloaded archieve from WEB-site you can skip step 1 and just run run_analysis.R script.
