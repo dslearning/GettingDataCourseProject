@@ -8,19 +8,20 @@ I used script "GetData.R" for downloading and extraction.
 
 After the script finished it work, we have folder "UCI HAR Dataset" in working directory
 The structure is:
-'
-'UCI HAR Dataset
-'               \train
-'                     \X_train.txt			-- this file contains the results of measurements
-'                     \Y_train.txt			-- this file contains the IDs of activities performed by volunteers 
-'                     \subject_train.txt		-- IDs of volunteers
-'               \test
-'                     \X_test.txt			-- this file contains the results of measurements
-'                     \Y_test.txt			-- this file contains the IDs of activities performed by volunteers 
-'                     \subject_test.txt		-- IDs of volunteers
-'                     \activity_labels.txt			-- List of activities
-'                     \features.txt			   	-- IDs of volunteers who took part in experiments
-'                     
+```
+
+UCI HAR Dataset
+               \train
+                     \X_train.txt			-- this file contains the results of measurements
+                     \Y_train.txt			-- this file contains the IDs of activities performed by volunteers 
+                     \subject_train.txt		-- IDs of volunteers
+               \test
+                     \X_test.txt			-- this file contains the results of measurements
+                     \Y_test.txt			-- this file contains the IDs of activities performed by volunteers 
+                     \subject_test.txt		-- IDs of volunteers
+                     \activity_labels.txt			-- List of activities
+                     \features.txt			   	-- IDs of volunteers who took part in experiments
+```                     
 
 What do we do with data?
 * load test & train data set and Y-values, load list of volunteers
