@@ -11,10 +11,10 @@
 
 #loading test set
 test_X<-read.table("UCI HAR Dataset/test/X_test.txt")
-train_Y<-read.table("UCI HAR Dataset/train/X_train.txt")
+train_X<-read.table("UCI HAR Dataset/train/X_train.txt")
 
-fullDS<-rbind(train_Y, test_X)
-if(nrow(fullDS) != nrow(test_X) + nrow(train_Y)){
+fullDS<-rbind(train_X, test_X)
+if(nrow(fullDS) != nrow(test_X) + nrow(train_X)){
   stop("Something is wrong. The number of rows in resulting data set is not equals to sum if rows in train and test data sets")
 }
 
