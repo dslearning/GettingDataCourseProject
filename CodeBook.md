@@ -36,7 +36,7 @@ What do we do with data?
 * write data frame into file
 
 ##Code book
-
+```
 * test_X - 2947 x 651 data.frame - test data set
 * test_Y - 2947 x 1 data.frame - test Y-values (IDs of activities)
 * train_X - 7352 x 561 data.frame - train data set
@@ -305,11 +305,4 @@ fBodyBodyGyroJerkMag-meanFreq	16
 		mean of BodyBodyGyroJerkMag
 		-1..1
  
-
-
-
-
-
-
-
-
+```
