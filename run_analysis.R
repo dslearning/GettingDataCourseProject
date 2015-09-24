@@ -39,6 +39,8 @@ colnames(subjects_all)<-"Subject"
 #loading the full list of features
 fts<-read.table("UCI HAR Dataset/features.txt")
 
+fts$V2<-gsub("[()]", "", fts$V2)
+
 # Exctacting all columns ID which names contains "mean" or "std"
 #
 col_ids<-fts[grepl("mean|std", fts[,2]),]
@@ -51,5 +53,13 @@ res<-fullDS[, col_ids[,1]]
 colnames(res)<-col_ids[,2]
 res<-cbind(subjects_all, ActivityName=full_Y[,2], res )
 
+
+# Step 5. Creating a second, independent tidy data set with the average 
+# of each variable for each activity and each subject.
+avg_res<-res %>% 
+  group_by(Subject, ActivityName) %>% 
+  summarise_each(funs(mean))
+
+
 # Write results to file
-write.table(x = res, file = "TidyData.txt", row.name=FALSE)
+write.table(x = avg_res, file = "TidyData.txt", row.name=FALSE, sep=",", dec=".")
